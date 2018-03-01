@@ -2,7 +2,7 @@
 
 OBJ=src\main.obj src\imgui_dock.obj src\imgui_impl_glfw_gl4.obj include\imgui\imgui.obj include\imgui\imgui_draw.obj include\imgui\imgui_demo.obj
 CFLAGS=/Iinclude /MT /std:c++latest /EHsc
-LFLAGS=lib\glfw3.lib gdi32.lib libcmt.lib shell32.lib winhttp.lib
+LFLAGS=lib\glfw3.lib gdi32.lib libcmt.lib shell32.lib
 WARNINGS=
 
 all: exe  
