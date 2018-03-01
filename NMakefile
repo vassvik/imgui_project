@@ -1,0 +1,17 @@
+# Sample makefile  
+
+OBJ=src\main.obj src\imgui_dock.obj src\imgui_impl_glfw_gl4.obj include\imgui\imgui.obj include\imgui\imgui_draw.obj include\imgui\imgui_demo.obj
+CFLAGS=/Iinclude /MT /std:c++latest /EHsc
+LFLAGS=lib\glfw3.lib gdi32.lib libcmt.lib shell32.lib winhttp.lib
+WARNINGS=
+
+all: exe  
+
+.cpp.obj:
+  cl.exe /nologo $(CFLAGS) /c $*.cpp /Fo$*.obj $(WARNINGS)
+
+exe: $(OBJ) 
+  link.exe /nologo -out:out.exe $** $(LFLAGS)
+
+clean:
+  del src\*.obj out.exe imgui.ini
